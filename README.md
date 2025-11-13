@@ -80,6 +80,7 @@ After preprocessing and merging, a unified dataset was created with:
 ## Dashboards  
 
 ### **1. Sales & Profitability Overview**
+<img src="" width="600">
 **Purpose:** Summarize total sales, profit, and performance by category.  
 **Views:**  
 - KPI Cards (Sales, Profit, Orders, Avg Margin)  
@@ -90,11 +91,13 @@ After preprocessing and merging, a unified dataset was created with:
 **Insights:**  
 - Total Sales ₹431K | Profit ₹23.9K | Avg Margin 5.5%  
 - *Electronics* dominates sales, *Clothing* has best margins.  
-- *Furniture* lags in profitability → cost optimization needed.  
+- *Furniture* lags in profitability → cost optimization needed.
+  
 
 ---
 
 ### **2. Regional & Targets Overview**
+<img src="" width="600">
 **Purpose:** Analyze regional performance, target achievement, and sales forecasts.  
 **Views:**  
 - Top 5 States (Order Count, Sales, Avg Profit)  
