@@ -73,7 +73,7 @@ After preprocessing and merging, a unified dataset was created with:
 
 ### 5️ **Visualization & Reporting**  
 - Created export-ready plots and CSVs for Tableau integration.  
-- Designed two interactive dashboards summarizing all findings.  
+- Designed two interactive dashboards summarizing maximum findings.  
 
 ---
 
@@ -97,7 +97,7 @@ After preprocessing and merging, a unified dataset was created with:
 ---
 
 ### **2. Regional & Targets Overview**
-<img src="" width="600">
+<img src="Regional_Tragets_Overview.png" width="600">
 **Purpose:** Analyze regional performance, target achievement, and sales forecasts.  
 **Views:**  
 - Top 5 States (Order Count, Sales, Avg Profit)  
@@ -133,17 +133,17 @@ After preprocessing and merging, a unified dataset was created with:
 | Forecasting | Prophet, statsmodels |
 | Dashboarding | Tableau |
 | Customer Segmentation | scikit-learn (KMeans) |
-| Mapping | GeoPandas (for choropleths) |
+| Mapping | GeoPandas for state-level maps |
 
 ---
 
-## Key Insights & Recommendations  
+## Key Insights
 
-1. **Furniture Optimization** — Reassess supplier pricing and discount policies.  
-2. **Focus on Clothing** — Highest margin category; invest in marketing.  
-3. **Regional Targeting** — Strengthen sales in Gujarat and Punjab (high orders, low margin).  
-4. **Retention Strategy** — Introduce loyalty incentives for “Loyal” and “Champion” customers.  
-5. **Forecast-Based Planning** — Align inventory and marketing with projected growth months.  
+1. **Improve Furniture Sales** — Review supplier costs and discounts to increase profit.  
+2. **Promote Clothing Category** — It gives the highest profit.
+3. **Target Regions Smartly** — Focus on Gujarat and Punjab to raise profit margins.
+4. **Keep Loyal Customers Engaged** — Offer special offers for loyal customers.
+5. **Plan Ahead Using Forecasts** — Use predicted growth months to manage stock.  
 
 ---
 
@@ -151,7 +151,7 @@ After preprocessing and merging, a unified dataset was created with:
 
 | File | Description |
 |------|-------------|
-| `notebooks/` | Python analysis notebooks (01–05) |
+| `notebooks/` | Python analysis notebooks (01–04) |
 | `dashboards/*.twbx` | Tableau dashboards |
 | `reports/JAR_BA_Assignment_Report.pdf` | Final PDF report with insights |
 | `outputs/tables/*.csv` | Processed datasets for dashboards |
@@ -168,14 +168,9 @@ The dashboards serve as executive tools for tracking performance and making **da
 
 ---
 
-## Author  
-
 **Sai Datta Putta**  
-Integrated M.Sc. Mathematics — NIT Warangal  
 📧 saidattaputta@gmail.com  
 📞 +91 80192 72866  
 🔗 [LinkedIn](https://www.linkedin.com/) | [GitHub](https://github.com/)
 
 ---
-
-⭐ *If you found this project helpful or insightful, consider giving it a star!* ⭐
