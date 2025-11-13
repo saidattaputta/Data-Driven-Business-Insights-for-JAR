@@ -4,8 +4,7 @@
 ---
 
 ## Project Overview  
-
-This repository presents a complete end-to-end analysis of **JAR’s business data**, conducted as part of the **JAR Business Analyst Intern Assignment**.  
+  
 
 The goal was to analyze sales and performance data to derive **actionable insights**, identify **growth opportunities**, and forecast future trends using **data analytics and visualization**.  
 
