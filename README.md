@@ -80,7 +80,7 @@ After preprocessing and merging, a unified dataset was created with:
 ## Dashboards  
 
 ### **1. Sales & Profitability Overview**
-<img src="" width="600">
+<img src="Sales_and_Profitability_Overview.png" width="600">
 **Purpose:** Summarize total sales, profit, and performance by category.  
 **Views:**  
 - KPI Cards (Sales, Profit, Orders, Avg Margin)  
