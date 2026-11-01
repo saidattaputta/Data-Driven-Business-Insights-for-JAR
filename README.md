@@ -1,175 +1,73 @@
-# Data-Driven Business Insights for JAR  
-### Uncovering Sales, Profitability, and Regional Performance through Data Analytics  
+# Data-Driven Business Insights for JAR
 
----
+A retail business analytics project examining sales, profit, category performance, regional performance, customer segments, and short-horizon sales forecasts. The work combines spreadsheet data preparation, exploratory analysis, time-series analysis, RFM segmentation, clustering, and reporting outputs.
 
-## Project Overview  
-  
+## Business Objective
 
-The goal was to analyze sales and performance data to derive **actionable insights**, identify **growth opportunities**, and forecast future trends using **data analytics and visualization**.  
+Turn order-level sales and target data into practical answers to questions such as:
 
-All analyses were performed in **Python**, and insights were visualized through **Tableau dashboards**. The project concludes with a detailed PDF report summarizing key outcomes and business recommendations.
+- Which product categories contribute most to sales and profit?
+- Where do actual sales differ from targets?
+- How do sales evolve over time?
+- Which customer groups appear more valuable or need attention?
+- What does a short-term sales forecast suggest for planning?
 
----
+## Data Sources
 
-## Dataset Information  
+The repository includes three Excel source workbooks in `data/Raw_Data/`:
 
-Three datasets were provided:  
+- List of orders
+- Order details
+- Sales targets
 
-| Dataset | Description | Key Columns |
-|----------|--------------|--------------|
-| **List_of_Orders** | Order-level details such as customer, state, and date. | `Order ID`, `Order Date`, `Customer Name`, `State` |
-| **Order_Details** | Item-level metrics including sales, profit, and discounts. | `Order ID`, `Category`, `Amount`, `Profit`, `Discount`, `Quantity` |
-| **Sales_Target** | Monthly sales targets per product category. | `Month`, `Category`, `Target Sales` |
+The notebooks join and enrich these inputs to create analytical tables and charts.
 
-After preprocessing and merging, a unified dataset was created with:
-- 500+ orders across 3 product categories  
-- Multiple Indian states  
-- Monthly targets for performance comparison  
+## Analysis Workflow
 
----
+| Notebook | Scope |
+|---|---|
+| `data_prep.ipynb` | Load, clean, join, and prepare order and target data |
+| `exploratory_data_analysis.ipynb` | Sales, profit, category, and descriptive analysis |
+| `forcasting_and_targets.ipynb` | Time-series decomposition, moving averages, and a three-month forecast / target comparison |
+| `regional_and_segment_analysis.ipynb` | Regional summaries, RFM features, customer segmentation, and clustering |
 
-## Business Objectives  
+## Deliverables
 
-1. **Sales & Profitability:**  
-   - Identify top-performing categories and states.  
-   - Measure profit margins and sales distribution.  
+- Charts in the repository root and `outcome/charts/`
+- Analytical tables and model outputs in `outcome/tables/`
+- Original input workbooks in `data/Raw_Data/`
 
-2. **Targets vs Actuals:**  
-   - Compare Furniture category performance against targets.  
-   - Highlight underperforming months and regions.  
+The repository currently contains both `outcome/` and `outcomes/` directories. They are documented as present and have intentionally not been renamed or merged.
 
-3. **Forecasting & Trends:**  
-   - Predict next 3 months’ sales using time-series forecasting.  
-   - Identify trends and seasonality.  
+## Technology
 
-4. **Customer & Regional Insights:**  
-   - Segment customers using RFM analysis.  
-   - Measure retention through cohort analysis.  
+- Python
+- pandas and NumPy
+- Matplotlib and Seaborn
+- scikit-learn (scaling and K-Means)
+- statsmodels (time-series decomposition)
+- Prophet when available, with a simple growth-based fallback in the forecast notebook
+- Jupyter Notebook
 
----
+## Reproduce the Analysis
 
-## Methodology  
+```bash
+git clone https://github.com/saidattaputta/Data-Driven-Business-Insights-for-JAR.git
+cd Data-Driven-Business-Insights-for-JAR
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\\Scripts\\activate
+pip install pandas numpy matplotlib seaborn scikit-learn statsmodels openpyxl jupyter
+```
 
-### 1️ **Data Preparation**  
-- Cleaned and standardized columns from all input Excel files.  
-- Handled missing data, standardized dates, and merged datasets on `Order ID`.  
-- Exported processed datasets for analysis and dashboards.  
+Open the notebooks from the repository root and run them in the order shown above. If using the Prophet forecasting path, install Prophet separately. The forecast notebook includes a simpler fallback when Prophet is unavailable.
 
-### 2️ **Exploratory Data Analysis**  
-- Generated descriptive statistics for sales, profit, and margin trends.  
-- Visualized category-level and time-based performance metrics.  
+## Interpretation and Limitations
 
-### 3️ **Regional & Customer Segmentation**  
-- Performed **RFM (Recency-Frequency-Monetary)** analysis to classify customer groups.  
-- Built **Cohort Retention Heatmaps** to analyze customer behavior over time.  
-- Aggregated state-level data for mapping and dashboard use.  
+- Forecasts are exploratory, short-horizon estimates and should be compared with a proper time-based holdout before operational use.
+- RFM labels and K-Means clusters depend on the chosen snapshot date, features, and thresholds.
+- Profit and margin interpretation depends on the source workbook definitions.
+- Some notebook paths refer to generated `data/processed/` and `outputs/` directories, while committed exports use `outcome/`; follow the paths established by the data-preparation notebook when reproducing the full workflow.
 
-### 4️ **Forecasting & Target Analysis**  
-- Applied **Prophet model** (with fallback method) to forecast future sales.  
-- Conducted monthly target comparisons for Furniture category.  
-- Analyzed deviations and growth expectations.  
+## Author
 
-### 5️ **Visualization & Reporting**  
-- Created export-ready plots and CSVs for Tableau integration.  
-- Designed two interactive dashboards summarizing maximum findings.  
-
----
-
-## Dashboards  
-
-### **1. Sales & Profitability Overview**
-<img src="Sales_and_Profitability_Overview.png" width="600">
-**Purpose:** Summarize total sales, profit, and performance by category.  
-**Views:**  
-- KPI Cards (Sales, Profit, Orders, Avg Margin)  
-- Sales by Category  
-- Profit Margin by Category  
-- Monthly Sales Trend  
-
-**Insights:**  
-- Total Sales ₹431K | Profit ₹23.9K | Avg Margin 5.5%  
-- *Electronics* dominates sales, *Clothing* has best margins.  
-- *Furniture* lags in profitability → cost optimization needed.
-  
-
----
-
-### **2. Regional & Targets Overview**
-<img src="Regional_Tragets_Overview.png" width="600">
-**Purpose:** Analyze regional performance, target achievement, and sales forecasts.  
-**Views:**  
-- Top 5 States (Order Count, Sales, Avg Profit)  
-- Furniture Sales vs Target (Actual vs Target)  
-- Overall Sales Forecast (Next 3 Months)  
-
-**Insights:**  
-- Maharashtra & Madhya Pradesh lead in total sales.  
-- Furniture missed multiple monthly targets.  
-- Forecast indicates ~10% sales growth next quarter.  
-
----
-
-## Key Results  
-
-| Focus Area | Key Findings |
-|-------------|---------------|
-| **Top Category** | Electronics — ₹165K total sales |
-| **Highest Margin Category** | Clothing — 8.0% average margin |
-| **Underperforming Category** | Furniture — 1.8% average margin |
-| **Top States** | Maharashtra, Madhya Pradesh |
-| **Sales Forecast** | +10% expected growth next 3 months |
-| **Customer Segments** | 4 RFM groups (Champions, Loyal, Potential, Attention) |
-
----
-
-## Tools & Technologies  
-
-| Stage | Tools |
-|--------|--------|
-| Data Cleaning | Python (pandas, numpy) |
-| Visualization | matplotlib, seaborn |
-| Forecasting | Prophet, statsmodels |
-| Dashboarding | Tableau |
-| Customer Segmentation | scikit-learn (KMeans) |
-| Mapping | GeoPandas for state-level maps |
-
----
-
-## Key Insights
-
-1. **Improve Furniture Sales** — Review supplier costs and discounts to increase profit.  
-2. **Promote Clothing Category** — It gives the highest profit.
-3. **Target Regions Smartly** — Focus on Gujarat and Punjab to raise profit margins.
-4. **Keep Loyal Customers Engaged** — Offer special offers for loyal customers.
-5. **Plan Ahead Using Forecasts** — Use predicted growth months to manage stock.  
-
----
-
-## Deliverables  
-
-| File | Description |
-|------|-------------|
-| `notebooks/` | Python analysis notebooks (01–04) |
-| `dashboards/*.twbx` | Tableau dashboards |
-| `reports/JAR_BA_Assignment_Report.pdf` | Final PDF report with insights |
-| `outputs/tables/*.csv` | Processed datasets for dashboards |
-| `outputs/charts/*.png` | Exported visualizations |
-
----
-
-## Conclusion  
-
-This project demonstrates how structured analytics can turn raw sales data into **strategic business insights**.  
-Through data cleaning, visualization, segmentation, and forecasting, the analysis identifies key drivers of performance and suggests **targeted actions for revenue and margin improvement**.
-
-The dashboards serve as executive tools for tracking performance and making **data-informed business decisions**.
-
----
-
-**Sai Datta Putta**  
-📧 saidattaputta@gmail.com  
-📞 +91 80192 72866  
-🔗 [LinkedIn](https://www.linkedin.com/) | [GitHub](https://github.com/)
-
----
+Sai Datta Putta
