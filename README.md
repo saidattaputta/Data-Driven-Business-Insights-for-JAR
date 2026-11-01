@@ -68,6 +68,9 @@ Open the notebooks from the repository root and run them in the order shown abov
 - Profit and margin interpretation depends on the source workbook definitions.
 - Some notebook paths refer to generated `data/processed/` and `outputs/` directories, while committed exports use `outcome/`; follow the paths established by the data-preparation notebook when reproducing the full workflow.
 
-## Author
 
-Sai Datta Putta
+---
+
+**Sai Datta Putta**
+
+[LinkedIn](https://www.linkedin.com/in/sai-datta-putta/)
